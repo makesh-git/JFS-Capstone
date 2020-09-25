@@ -1,0 +1,103 @@
+
+<div class="container">
+
+  <div class="row">
+<app-header></app-header>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+
+      <table class="table table-hover" style="text-align: center;">
+        <thead style="font-style: italic;">
+          <tr style="text-align: center;">
+            <th style="text-align: center;">User Id</th>
+            <th style="text-align: center;">Name</th>
+            <th style="text-align: center;">Age</th>
+            <th style="text-align: center;">Email</th>
+            <th style="text-align: center;">Batch</th>
+            <th style="text-align: center;">Group</th>
+
+            <th style="text-align: center;">Profile</th>
+            <th style="text-align: center;">Convert To Motivator</th>
+
+          </tr>
+        </thead>
+        <tbody *ngFor="let u of users.reverse()" style="text-align: center;">
+          <tr>
+            <td>{{u.userid}}</td>
+            <td>{{u.name}}</td>
+            <td>{{u.age}}</td>
+            <td>{{u.email}}</td>
+            <td>{{u.batch.batchname}}</td>
+            <td>{{u.group.groupname}}</td>
+
+            <td>
+              <button [routerLink]="['/profile/user',u.userid]" routerLinkActive="router-link-active" type="button"
+                class="myBtnGreen">Profile
+                <fa-icon [icon]="['fas', 'user']" size="1x" [styles]="{'stroke': 'white', 'color': 'white'}"></fa-icon>
+                </button>
+            </td>
+            <td>
+              <button (click)="convert(u)" routerLinkActive="router-link-active" type="button"
+                class="myBtnBlue">Convert to Motivator
+                <fa-icon [icon]="['fas', 'plus-circle']" size="1x" [styles]="{'stroke': 'white', 'color': 'white'}"></fa-icon>
+                </button>
+            </td>
+            <td>
+
+
+
+
+
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+
+
+
+      <div class="modal" id="modal-id" [ngClass]="{'show': mod}">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" (click)="mod=false" class="close" data-dismiss="modal"
+                aria-hidden="true">&times;</button>
+              <h4 class="modal-title" style="text-align : center;"><b>Assign Batch</b></h4>
+            </div>
+            <div class="modal-body">
+
+
+              <!-- <h4 style="text-align: center; color: red;"><b>BATCH - {{bname}}</b></h4> -->
+
+              <form (ngSubmit)="formSubmit()" #form="ngForm" style="text-align: center">
+                <div class="form-group">
+                  <label for="">Select Motivating Batch</label>
+                  <br>
+                  <select name="selBatch" [(ngModel)]="selBatch" id="batch" class="buttonDrop" required="required"
+                    style="margin-left: 40px;">
+                    <option [ngValue]="undefined" selected disabled>--Select Batch--</option>
+                    <option [ngValue]="b" *ngFor="let b of batch">{{b.batchname}}</option>
+                  </select>
+
+                </div>
+                <button type="submit" class="myBtnBlue">Assign</button>
+              </form>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" (click)="mod=false" class="btn btn-default" data-dismiss="modal">Close</button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  </div>
+
+</div>
+<app-footer></app-footer>

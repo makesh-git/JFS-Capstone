@@ -1,0 +1,172 @@
+.container{
+  background-color: blanchedalmond;
+  background-image: url('https://images.pexels.com/photos/40751/running-runner-long-distance-fitness-40751.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+tbody{
+  background-color: blanchedalmond;
+  text-align: center;
+}
+th{
+  font-style: italic;
+  text-align: center;
+}
+button.UI {
+	background: none !important;
+	border: none;
+	padding: 0 !important;
+	/*optional*/
+	font-family: arial, sans-serif;
+	/*input has OS specific font-family*/
+	color: #069;
+	text-decoration: underline;
+	cursor: pointer;
+}
+button.UI {
+	background: none !important;
+	border: none;
+	padding: 0 !important;
+	/*optional*/
+	font-family: arial, sans-serif;
+	/*input has OS specific font-family*/
+	color: #069;
+	text-decoration: underline;
+	cursor: pointer;
+}
+.frm{
+  color: red;
+  font-size: small;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.msg{
+  font-weight: 600;
+}
+
+.sent{
+  color: red;
+  font-size: small;
+  font-style: italic;
+  font-weight: bold;
+  text-align: right;
+}
+.button {
+  /* background-color: #4CAF50; Green */
+  background-color: blanchedalmond;
+  border: none;
+  color: black;
+  font-weight: bold;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+.buttonSub {
+  /* background-color: #4CAF50; Green */
+  background-color:#4CAF50;
+  border: none;
+  color: white;
+  font-weight: bold;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+.buttonRec {
+  /* background-color: #4CAF50; Green */
+  background-color:rgb(71, 82, 243);
+  border: none;
+  color: white;
+  font-weight: bold;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+.buttonDrop {
+  /* background-color: #4CAF50; Green */
+  background-color:whitesmoke;
+  border: none;
+  color: black;
+  font-weight: bold;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.button {
+  /* background-color: #4CAF50; Green */
+  background-color: blanchedalmond;
+  border: none;
+  color: black;
+  font-weight: bold;
+  padding: 10px 25px;
+  /* text-align: center; */
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.button1 {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.button2:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.button3 {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+li:hover{
+  font-weight: bolder;
+  color: black;
+  box-shadow: 0 32px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+th{
+  background-color: rgb(241, 165, 50);
+  text-align: center;
+  font-style: italic;
+}
+tbody{
+  text-align:  center;
+}
+tbody:hover{
+  font-weight: bolder;
+  color: black;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+tr:hover{
+  font-weight: bolder;
+  color: black;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}

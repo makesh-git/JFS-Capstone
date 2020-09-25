@@ -1,0 +1,154 @@
+<div class="container" style="background-color: blanchedalmond;">
+
+  <div class="row">
+    <ng-container *ngIf="CURRENT_USER_TYPE === 'Motivator' ">
+      <app-moti-header></app-moti-header>
+    </ng-container>
+    <ng-container *ngIf="CURRENT_USER_TYPE === 'Admin' ">
+      <app-header></app-header>
+    </ng-container>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+
+
+      <div class="row" style="margin-left: 15%;">
+        <br>
+
+        <br>
+
+
+
+
+
+        <table class="table table-bordered table-hover" style="width:50%;">
+
+
+          <tbody class="button button3">
+            <h3 style=" text-align: center; "><b><i>
+                  <fa-icon [icon]="['fas', 'user']" size="1x" [styles]="{'stroke': 'black', 'color': 'black'}">
+                  </fa-icon>
+
+
+                  USER PROFILE
+                </i></b></h3>
+            <tr>
+              <td class="h">Name </td>
+              <td class="b"> {{user.name}}</td>
+            </tr>
+
+            <tr>
+              <td class="h">Age </td>
+              <td class="b"> {{user.age}}</td>
+            </tr>
+            <tr>
+              <td class="h">Gender </td>
+              <td class="b"> {{user.gender}}</td>
+            </tr>
+            <tr>
+              <td class="h">BMI </td>
+              <td class="b"> {{user.bmi}}</td>
+            </tr>
+            <tr>
+              <td class="h">Email </td>
+              <td class="b"> {{user.email}}</td>
+            </tr>
+            <tr>
+              <td class="h">Mobile </td>
+              <td class="b"> {{user.mobile}}</td>
+            </tr>
+            <tr>
+              <td class="h">Batch </td>
+              <td class="b"> {{user.batch.batchname}}</td>
+            </tr>
+            <tr>
+              <td class="h">Group </td>
+              <td class="b"> {{user.group.groupname}}</td>
+            </tr>
+            <tr>
+              <td class="h">Country </td>
+              <td class="b"> {{user.country}}</td>
+            </tr>
+
+            <tr>
+              <td class="h"> State</td>
+              <td class="b"> {{user.state}}</td>
+            </tr>
+
+            <tr>
+              <td class="h">City </td>
+              <td class="b"> {{user.city}}</td>
+            </tr>
+
+            <tr>
+              <td class="h">Address </td>
+              <td class="b"> {{user.address}}</td>
+            </tr>
+
+            <tr>
+              <td class="h"> Height(cm)</td>
+              <td class="b"> {{user.height}}</td>
+            </tr>
+
+            <tr>
+              <td class="h"> Weight(kg)</td>
+              <td class="b"> {{user.weight}}</td>
+            </tr>
+
+            <tr>
+              <td class="h">Medical Restrictions </td>
+              <td class="b"> {{user.medRes}}</td>
+            </tr>
+
+            <tr>
+              <td class="h">Dietery Restrictions </td>
+              <td class="b"> {{user.dietRes}}</td>
+            </tr>
+
+            <tr>
+              <td class="h"> Reason for Joining</td>
+              <td class="b"> {{user.reason}}</td>
+            </tr>
+
+            <tr>
+              <td class="h">Dietery Type </td>
+              <td class="b"> {{user.food}}</td>
+            </tr>
+
+            <tr>
+              <td class="h">Refered By</td>
+              <td class="b"> {{user.ref}}</td>
+            </tr>
+
+            <tr>
+              <td class="h">Preganancy Status </td>
+              <td class="b"> {{user.preg}}</td>
+            </tr>
+
+            <tr>
+              <td class="h">Date Joined </td>
+              <td class="b"> {{user.regDate}}</td>
+            </tr>
+            <tr>
+              <td class="h">Referel Id </td>
+              <td class="b"> {{user.refId}}</td>
+            </tr>
+            <br>
+
+
+          </tbody>
+
+
+
+        </table>
+
+
+        <br><br><br><br>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<app-footer></app-footer>

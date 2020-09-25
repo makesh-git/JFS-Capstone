@@ -1,0 +1,106 @@
+<div class="container" style="background-color: blanchedalmond;">
+
+  <div class="row">
+    <app-user-header></app-user-header>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+
+      <form (ngSubmit)="formSubmit()" style="width:240px ; margin-left: 36%;">
+        <!--
+<button [routerLink]="['/user/view-report']" routerLinkActive="router-link-active"  type="button" class="btn btn-default">button</button> -->
+
+        <br>
+        <div class="button button3">
+          <fa-icon [icon]="['fas', 'calendar-alt']" size="1x" [styles]="{'stroke': 'red', 'color': 'black'}"></fa-icon>
+          <label for="">&nbsp;Select Month</label>
+          <select name="month" [(ngModel)]="meas.month" id="month" class="buttonDrop button3" required="required">
+            <option [ngValue]="undefined" selected disabled>-- Select Month --</option>
+            <option *ngFor="let m of AllMonths">{{m}}</option>
+          </select>
+        </div>
+
+        <br>
+        <div class="button button3">
+          <label for="">Height(in cm)</label>
+          <input type="number" min="1" name="height" [(ngModel)]="meas.height" class="buttonDrop button3" id="height"
+            placeholder="Enter Height Value" required>
+        </div>
+        <br>
+        <div class="button button3">
+          <label for="">Weight(in kg)</label>
+          <input type="number" min="1" name="weight" [(ngModel)]="meas.weight" class="buttonDrop button3" id="weight"
+            placeholder="Enter Weight Value" required>
+        </div>
+
+        <br>
+        <div class="button button3">
+          <label for="">Chest(in cm)</label>
+          <input type="number" min="1" name="chest" [(ngModel)]="meas.chest" class="buttonDrop button3" id="chest"
+            placeholder="Enter Chest Value" required>
+        </div>
+
+        <br>
+        <div class="button button3">
+          <label for="">Waist(in inch)</label>
+          <input type="number" min="1" name="waist" [(ngModel)]="meas.waist" class="buttonDrop button3" id="waist"
+            placeholder="Enter Waist Value" required>
+        </div>
+
+        <br>
+
+        <div class="button button3">
+          <label for="">Shoulder(in cm)</label>
+          <input type="number" min="1" name="shoulder" [(ngModel)]="meas.shoulder" class="buttonDrop button3" id="shoulder"
+            placeholder="Enter Shoulder Value" required>
+        </div>
+
+        <br>
+
+        <div class="button button3">
+          <label for="">Biceps(in inch)</label>
+          <input type="number" min="1" name="biceps" [(ngModel)]="meas.biceps" class="buttonDrop button3" id="biceps"
+            placeholder="Enter Biceps Value" required>
+        </div>
+
+        <br>
+
+        <div class="button button3">
+          <label for="">Forearm(in inch)</label>
+          <input type="number" min="1" name="forearm" [(ngModel)]="meas.forearm" class="buttonDrop button3" id="forearm"
+            placeholder="Enter Forearm Value" required>
+        </div>
+
+        <br>
+        <div class="button button3">
+          <label for="">&nbsp;&nbsp;Leg(in inch)</label>
+          <input type="number" min="1" name="leg" [(ngModel)]="meas.legs" class="buttonDrop button3" id="leg"
+            placeholder="Enter Leg Value" required>
+        </div>
+
+        <br>
+        <div class="button button3">
+          <label for="">&nbsp;Thigh(in inch)</label>
+          <input type="number" min="1" name="thigh" [(ngModel)]="meas.thigh" class="buttonDrop button3" id="thigh"
+            placeholder="Enter Thigh Value" required>
+        </div>
+
+        <br>
+        <div class="button button3">
+          <label for="">&nbsp;&nbsp;Hip(in inch)</label>
+          <input type="number" min="1" name="hip" [(ngModel)]="meas.hip" class="buttonDrop button3" id="hip"
+            placeholder="Enter Hip Value" required>
+        </div>
+
+        <br><br>
+        <button type="submit" class="buttonSub button2" style="margin-left: 84px;">Update</button>
+        <br> <br>
+        <br>
+        <br>
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
+<app-footer></app-footer>

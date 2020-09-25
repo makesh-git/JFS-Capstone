@@ -1,0 +1,357 @@
+<div class="container" style="background-color: blanchedalmond;">
+
+  <div class="row">
+
+    <ng-container *ngIf="CURRENT_TYPE == 'Admin'">
+      <app-header></app-header>
+    </ng-container>
+    <ng-container *ngIf="CURRENT_TYPE == 'Motivator'">
+      <app-moti-header></app-moti-header>
+    </ng-container>
+    <ng-container *ngIf="CURRENT_TYPE == 'User'">
+      <app-user-header></app-user-header>
+    </ng-container>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+      <ng-container *ngIf="u">
+        <h3 style="text-align: center; font-weight: bold;">
+          <fa-icon [icon]="['fas', 'search']" size="1x" [styles]="{'stroke': 'black', 'color': 'black'}"></fa-icon>
+          Search Result
+        </h3>
+
+        <h4 style="text-align: center;"><b>
+            <fa-icon [icon]="['fas', 'users']" size="1x" [styles]="{'stroke': 'black', 'color': 'black'}"></fa-icon>
+
+            Users
+          </b></h4>
+        <table class="table table-bordered table-hover">
+
+          <thead>
+
+            <tr>
+              <th>Name</th>
+              <th>Id</th>
+              <th>Age</th>
+              <th>Gender</th>
+
+              <th>Batch</th>
+              <th>Group</th>
+              <th>Country</th>
+              <th>State</th>
+              <th>City</th>
+
+              <th>BMI</th>
+              <th>Dietery Type</th>
+
+            </tr>
+          </thead>
+          <tbody *ngFor="let u of user">
+            <tr>
+              <td>{{u.name}}</td>
+              <td>{{u.userid}}</td>
+              <td>{{u.age}}</td>
+              <td>{{u.gender}}</td>
+
+              <td>{{u.batch.batchname}}</td>
+              <td>{{u.group.groupname}}</td>
+              <td>{{u.country}}</td>
+              <td>{{u.state}}</td>
+              <td>{{u.city}}</td>
+
+              <td>{{u.bmi}}</td>
+              <td>{{u.food}}</td>
+
+            </tr>
+          </tbody>
+        </table>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+      </ng-container>
+
+      <ng-container *ngIf="m">
+        <h3 style="text-align: center; font-weight: bold;">
+          <fa-icon [icon]="['fas', 'search']" size="1x" [styles]="{'stroke': 'black', 'color': 'black'}"></fa-icon>
+          Search Result
+        </h3>
+
+        <h4 style="text-align: center;"><b>
+            <fa-icon [icon]="['fas', 'users']" size="1x" [styles]="{'stroke': 'black', 'color': 'black'}"></fa-icon>
+
+            Motivators
+          </b></h4>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Id</th>
+              <th>Age</th>
+              <th>Gender</th>
+              <th>Email</th>
+              <th>Mobile</th>
+              <th>Motivating Batch</th>
+
+              <th>Country</th>
+              <th>State</th>
+              <th>City</th>
+              <th>Height</th>
+              <th>Weight</th>
+
+            </tr>
+          </thead>
+          <tbody *ngFor="let m of moti">
+            <tr>
+              <td>{{m.name}}</td>
+              <td>{{m.motiid}}</td>
+              <td>{{m.age}}</td>
+              <td>{{m.gender}}</td>
+              <td>{{m.email}}</td>
+              <td>{{m.mobile}}</td>
+              <td>{{m.batches}}</td>
+
+              <td>{{m.country}}</td>
+              <td>{{m.state}}</td>
+              <td>{{m.city}}</td>
+              <td>{{m.height}}</td>
+              <td>{{m.weight}}</td>
+
+            </tr>
+          </tbody>
+        </table>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+      </ng-container>
+
+
+      <ng-container *ngIf="b">
+        <h3 style="text-align: center; font-weight: bold;">
+          <fa-icon [icon]="['fas', 'search']" size="1x" [styles]="{'stroke': 'black', 'color': 'black'}"></fa-icon>
+
+          Search Result
+        </h3>
+        <h4 style="text-align: center;"><b>
+            <fa-icon [icon]="['fas', 'list']" size="1x" [styles]="{'stroke': 'black', 'color': 'black'}"></fa-icon>
+
+            Batch Details
+          </b></h4>
+        <table class="table table-hover" style="width: 70%; margin-left: 14%;" *ngFor="let b of batch">
+          <tbody>
+            <tr>
+              <td class="h">Batch Name </td>
+              <td class="b"> {{b.batchname}}</td>
+            </tr>
+            <tr>
+              <td class="h">Batch Id </td>
+              <td class="b"> {{b.batchid}}</td>
+            </tr>
+            <tr>
+              <td class="h">Description </td>
+              <td class="b"> {{b.batchdesc}}</td>
+            </tr>
+            <tr>
+              <td class="h">Started On </td>
+              <td class="b"> {{b.strtdate}}</td>
+            </tr>
+          </tbody>
+        </table>
+
+
+        <h4 style="text-align: center;"><b>
+            <fa-icon [icon]="['fas', 'users']" size="1x" [styles]="{'stroke': 'black', 'color': 'black'}"></fa-icon>
+
+            Batch Motivators
+          </b></h4>
+
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Id</th>
+              <th>Age</th>
+              <th>Gender</th>
+              <th>Email</th>
+              <th>Mobile</th>
+              <th>Motivating Batch</th>
+
+              <th>Country</th>
+              <th>State</th>
+              <th>City</th>
+              <th>Height</th>
+              <th>Weight</th>
+
+            </tr>
+          </thead>
+          <tbody *ngFor="let m of moti">
+            <tr>
+              <td>{{m.name}}</td>
+              <td>{{m.motiid}}</td>
+              <td>{{m.age}}</td>
+              <td>{{m.gender}}</td>
+              <td>{{m.email}}</td>
+              <td>{{m.mobile}}</td>
+              <td>{{m.batches}}</td>
+
+              <td>{{m.country}}</td>
+              <td>{{m.state}}</td>
+              <td>{{m.city}}</td>
+              <td>{{m.height}}</td>
+              <td>{{m.weight}}</td>
+
+            </tr>
+          </tbody>
+        </table>
+        <h4 style="text-align: center;"><b>
+            <fa-icon [icon]="['fas', 'users']" size="1x" [styles]="{'stroke': 'black', 'color': 'black'}"></fa-icon>
+
+            Users
+          </b></h4>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Id</th>
+              <th>Age</th>
+              <th>Gender</th>
+
+              <th>Batch</th>
+              <th>Group</th>
+              <th>Country</th>
+              <th>State</th>
+              <th>City</th>
+
+              <th>BMI</th>
+              <th>Dietery Type</th>
+
+            </tr>
+          </thead>
+          <tbody *ngFor="let u of user">
+            <tr>
+              <td>{{u.name}}</td>
+              <td>{{u.userid}}</td>
+              <td>{{u.age}}</td>
+              <td>{{u.gender}}</td>
+
+              <td>{{u.batch.batchname}}</td>
+              <td>{{u.group.groupname}}</td>
+              <td>{{u.country}}</td>
+              <td>{{u.state}}</td>
+              <td>{{u.city}}</td>
+
+              <td>{{u.bmi}}</td>
+              <td>{{u.food}}</td>
+
+            </tr>
+          </tbody>
+        </table>
+
+        <br><br><br><br><br><br><br><br><br><br><br>
+      </ng-container>
+
+      <ng-container *ngIf="g">
+        <h3 style="text-align: center; font-weight: bold;">
+          <fa-icon [icon]="['fas', 'search']" size="1x" [styles]="{'stroke': 'black', 'color': 'black'}"></fa-icon>
+
+          Search Result
+        </h3>
+        <h4 style="text-align: center;"><b>
+            <fa-icon [icon]="['fas', 'list']" size="1x" [styles]="{'stroke': 'black', 'color': 'black'}"></fa-icon>
+
+            Group Details
+          </b></h4>
+        <table class="table table-hover" style="width: 70%; margin-left: 14%;" *ngFor="let g of group">
+          <tbody>
+            <tr>
+              <td class="h">Group Name </td>
+              <td class="b"> {{g.groupid}}</td>
+            </tr>
+            <tr>
+              <td class="h">Group Id </td>
+              <td class="b"> {{g.groupid}}</td>
+            </tr>
+            <tr>
+              <td class="h">Description </td>
+              <td class="b"> {{g.groupdesc}}</td>
+            </tr>
+            <tr>
+              <td class="h">Started On </td>
+              <td class="b"> {{g.strtdate}}</td>
+            </tr>
+          </tbody>
+        </table>
+        <h4 style="text-align: center;"><b>
+            <fa-icon [icon]="['fas', 'users']" size="1x" [styles]="{'stroke': 'black', 'color': 'black'}"></fa-icon>
+
+            Users
+          </b></h4>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Id</th>
+              <th>Age</th>
+              <th>Gender</th>
+
+              <th>Batch</th>
+              <th>Group</th>
+              <th>Country</th>
+              <th>State</th>
+              <th>City</th>
+
+              <th>BMI</th>
+              <th>Dietery Type</th>
+              <th>Preganancy Status</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let u of user">
+            <tr>
+              <td>{{u.name}}</td>
+              <td>{{u.userid}}</td>
+              <td>{{u.age}}</td>
+              <td>{{u.gender}}</td>
+
+              <td>{{u.batch.batchname}}</td>
+              <td>{{u.group.groupname}}</td>
+              <td>{{u.country}}</td>
+              <td>{{u.state}}</td>
+              <td>{{u.city}}</td>
+
+              <td>{{u.bmi}}</td>
+              <td>{{u.food}}</td>
+              <td>{{u.preg}}</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+
+
+
+
+      </ng-container>
+
+
+
+      <ng-container *ngIf="nf">
+        <h3 style="text-align: center; color: white; margin-top: 150px;"><b>
+
+            <fa-icon [icon]="['fas', 'thumbs']" size="1x" [styles]="{'stroke': 'black', 'color': 'black'}"></fa-icon>
+
+
+            No Result Found
+          </b></h3>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      </ng-container>
+
+
+
+      <br><br><br><br><br><br><br><br><br><br><br>
+
+    </div>
+
+  </div>
+</div>
+
+
+<app-footer></app-footer>

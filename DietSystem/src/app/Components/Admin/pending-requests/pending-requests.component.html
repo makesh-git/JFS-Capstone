@@ -1,0 +1,57 @@
+<div class="container" style="background-color: blanchedalmond;">
+
+  <div class="row">
+    <app-header></app-header>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+
+      <table class="table table-hover" *ngIf="con">
+        <thead>
+          <tr>
+            <th>Email</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>BMI</th>
+            <th>State</th>
+            <th>Registered On</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let r of regUser.reverse()">
+          <tr>
+            <td>{{r.email}}</td>
+            <td>{{r.name}}</td>
+            <td>{{r.age}}</td>
+            <td>{{r.gender}}</td>
+            <td>{{r.bmi}}</td>
+            <td>{{r.state}}</td>
+            <td>{{r.regDate}}</td>
+
+            <td>
+
+              <button [routerLink]="['/request-action',r.email]" routerLinkActive="router-link-active" type="button"
+                class="myBtnBlue">Approve/Reject
+                <fa-icon [icon]="['fas', 'arrow-right']" size="1x" [styles]="{'stroke': 'white', 'color': 'white'}">
+                </fa-icon></button>
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <div class="row" *ngIf="!con">
+
+        <h3 style="color: white; text-align: center; margin-top: 20%;"><b><i>No Pending Requests</i></b></h3>
+      </div>
+
+
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+  </div>
+
+</div>
+
+<app-footer></app-footer>

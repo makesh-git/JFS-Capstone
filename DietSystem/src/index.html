@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <title>DietSystem</title>
+  <base href="/">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+  <link rel="icon" type="image/x-icon" href="apple_diet-512.ico">
+  <!-- <link rel="icon" type="image/x-icon" href="41_512_min__1__Udp_icon.ico"> -->
+  <!-- DietSystem\src\myIco.ico -->
+</head>
+
+<body>
+  <app-root></app-root>
+
+</body>
+
+
+
+
+<script>
+
+
+
+  function chk() {
+   // console.log("CKKK");
+  }
+
+  var stateObject = {
+    "India": {
+
+      "Andhra Pradesh": ["Amaravati", "Chittoor", "Dowlaiswaram",
+        "Guntur", "Kadapa", "Kakinada", "Tirupati", "Vijayawada",
+        "Visakhapatnam"],
+
+      "Assam": ["Guwahati", "Tezpur", "Dibrugarh", "Silchar",
+        "North Lakhimpur"],
+
+      "Bihar": ["Gaya", "Patna", "Sitamarhi",],
+
+      "Chhattisgarh": ["Raipur", "Bilaspur", "Korba",
+        " Durg-Bhilainagar", "Raigarh", "Rajnandgaon"],
+
+      "New Delhi": ["New Delhi", "North Delhi"],
+
+      "Goa": ["Panaji", "Vasco-da-Gama", "Ponda", "Margao", "Mapusa",
+        "GoaVelha"],
+
+      "Gujarat": ["Gandhinagar", 'Ahmedabad', 'Surat', 'Rajkot',
+        'Junagadh', 'Vadodara'],
+
+      "Haryana": ['Chandigarh', 'Faridabad', 'Gurgaon', 'Sonipat',
+        'Panipat', 'Ambala'],
+
+      "Himachal Pradesh": ["Shimla", "Dharamshala", "Mandi", "Solan",
+        "Bilaspur", "Chamba"],
+
+      "Jharkhand": ["Ranchi", "BokaroSteelCity", "Jamshedpur",
+        "Deoghar", "Hazaribagh", "Dhanbad"],
+
+      "Karnataka": ["Bengaluru", "Mysore", 'Davangere', "Mangalore",
+        "Hubli-Dharwad", "Belgaum"],
+
+      "Kerala": ['Thiruvananthapuram', 'Kochi', 'Kozhikode', 'Thrissur'],
+
+      "Madhya Pradesh": ['Bhopal', 'Indore', 'Gwalior', 'Jabalpur',
+        'Ujjain', 'Sagar'],
+
+      "Maharashtra": ["Mumbai", "Pune", "Nagpur", "Nashik",
+        "Aurangabad", 'Solapur'],
+
+      "Manipur": ["Imphal", 'Bishnupur', 'Ukhrul', 'Tamenglong',
+        'Chandel', 'Senapati'],
+
+      "Meghalaya": ['Shillong', 'Cherrapunji', "Tura", 'Jowai',
+        'Baghmara', 'Nongpoh'],
+
+      "Mizoram": ["Aizawl", "Lunglei", "Serchhip", "Champhai",
+        'Tuipang', "Mamit"],
+
+      "Nagaland": ["Kohima", "Tuensang", 'Zunheboto', "Mokokchung",
+        "KiphireSadar", "Phek"],
+
+      "Odisha": ["Bhubaneswar", "Rourkela", 'Cuttack', 'Brahmapur',
+        'Puri', "Sambalpur"],
+
+      "Punjab": ['Chandigarh', 'Amritsar', 'Jalandhar', 'Ludhiana',
+        'Patiala', 'Kapurthala'],
+
+      "Rajasthan": ['Jaipur', 'Bikaner', 'Jaisalmer', 'Jodhpur',
+        'Udaipur', 'Ajmer'],
+
+      "Sikkim": ["Gangtok", 'Namchi', 'Gyalshing', "Mangan",
+        "Rabdentse"],
+
+      "Tamil Nadu": ["Chennai", "Tiruchirappalli", "Madurai", "Erode",
+        "Vellore", "Coimbatore"],
+
+      "Telangana": ["Hyderabad", "Warangal", "Nizamabad", "Karimnagar",
+        "Adilabad", "Khammam"],
+
+      "Tripura": ["Agartala", "Amarpur", "Kumarghat", "Udaipur",
+        "Gakulnagar", "Kunjaban"],
+
+      "Uttar Pradesh": ["Lucknow", "Noida", "Varanasi", "Allahabad",
+        "Agra", "Kanpur"],
+
+      "Uttarakhand": ["Dehradun", "Haridwar", "Roorkee", "Rishikesh",
+        "Kashipur", "Haldwani"],
+
+      "West Bengal": ["Kolkata", "Darjeeling", "Siliguri", "Asansol",
+        "Howrah", "Durgapur"],
+    },
+
+  }
+
+  function ff() {
+
+
+    var countySel = document.getElementById("countySel"),
+      stateSel = document.getElementById("stateSel"),
+      districtSel = document.getElementById("districtSel");
+
+    countySel.onchange = function () {
+
+      stateSel.length = 1; // remove all options bar first
+      districtSel.length = 1; // remove all options bar first
+      if (this.selectedIndex < 1)
+        return; // done
+      for (var state in stateObject[this.value]) {
+        stateSel.options[stateSel.options.length] = new Option(state,
+          state);
+      }
+
+    }
+
+    stateSel.onchange = function () {
+
+      districtSel.length = 1; // remove all options bar first
+      if (this.selectedIndex < 1)
+        return; // done
+      var district = stateObject[countySel.value][this.value];
+      for (var i = 0; i < district.length; i++) {
+        districtSel.options[districtSel.options.length] = new Option(
+          district[i], district[i]);
+      }
+    }
+
+    return true;
+  }
+
+
+
+
+</script>
+
+</html>

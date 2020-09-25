@@ -1,0 +1,89 @@
+<div class="container" style="background-color:blanchedalmond;">
+
+  <div class="row">
+
+    <app-user-header></app-user-header>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+
+
+
+      <form (ngSubmit)="formSubmit()" #form="ngForm" style="width: 250px;margin-left: 37%;">
+        <br>
+        <div class="button button3">
+          <fa-icon [icon]="['fas', 'calendar-alt']" size="1x" [styles]="{'stroke': 'red', 'color': 'black'}"></fa-icon>
+          <label for="">&nbsp;Select date</label>
+          <input type="date" name="datee" [(ngModel)]="dlg.datee" class="buttonDrop button3" id="date"
+            placeholder="Input field" style="width: 235px;" required>
+        </div>
+
+
+
+
+        <!-- <div class="container">
+          <div class="row">
+              <div class='col-sm-6'>
+                  <div class="form-group">
+                      <div class='input-group date' id='datetimepicker1'>
+                          <input type='text' class="buttonDrop button3" />
+                          <span class="input-group-addon">
+                              <span class="glyphicon glyphicon-men"></span>
+                          </span>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+      </div> -->
+
+
+        <br>
+        <div class="button button3">
+          <label for="">Breakfast Details</label>
+          <textarea name="breakfast" [(ngModel)]="dlg.breakfast" id="breakfast" class="buttonDrop button3" rows="3"
+            required="required"></textarea>
+        </div>
+
+        <br>
+        <div class="button button3">
+          <label for="">Lunch Details</label>
+          <textarea name="lunch" [(ngModel)]="dlg.lunch" id="lunch" class="buttonDrop button3" rows="3"
+            required="required"></textarea>
+        </div>
+        <br>
+        <div class="button button3">
+          <label for="">Dinner Details</label>
+          <textarea name="dinner" [(ngModel)]="dlg.dinner" id="dinner" class="buttonDrop button3" rows="3"
+            required="required"></textarea>
+        </div>
+        <br>
+        <div class="button button3">
+          <label for="">Fruits & Vegetables Details</label>
+          <textarea name="fruits" [(ngModel)]="dlg.fruits" id="fruits" class="buttonDrop button3" rows="3"
+            required="required"></textarea>
+        </div>
+        <br>
+        <div class="button button3">
+          <label for="">Workouts Done</label>
+          <textarea name="workout" [(ngModel)]="dlg.workout" id="workouts" class="buttonDrop button3" rows="3"
+            required="required"></textarea>
+        </div>
+
+        <br>
+        <div class="button button3">
+          <label for="">Others</label>
+          <textarea name="dlog" [(ngModel)]="dlg.dlog" id="others" class="buttonDrop button3" rows="3"
+            required="required"></textarea>
+        </div>
+        <br><br>
+        <button type="submit" class="buttonSub button2" style="margin-left: 83px;">Update</button>
+        <br><br><br><br><br><br><br>
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
+
+<app-footer></app-footer>

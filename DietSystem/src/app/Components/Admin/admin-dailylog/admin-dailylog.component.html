@@ -1,0 +1,172 @@
+<div class="container" style="background-color: blanchedalmond;">
+
+  <div class="row">
+    <app-header></app-header>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+
+      <div *ngIf="head == 'date'" class="col-xs-15 col-sm-15 col-md-15 col-lg-15">
+        <br>
+        <button class="button button3" type="button" (click)="selDate()" style="margin-left: 50px;">Select Date
+          <fa-icon [icon]="['fas', 'calendar-alt']" size="1x" [styles]="{'stroke': 'red', 'color': 'black'}"></fa-icon>
+        </button>
+        &nbsp;
+        <button class="button button2" (click)="selBatch()" type="button">Search by Batch
+          <fa-icon [icon]="['fas', 'search']" size="1x" [styles]="{'stroke': 'red', 'color': 'black'}"></fa-icon>
+        </button>
+        &nbsp;
+        <button class="button button2" (click)="selAll()" type="button">View All
+          <fa-icon [icon]="['fas', 'list']" size="1x" [styles]="{'stroke': 'red', 'color': 'black'}"></fa-icon>
+        </button>
+      </div>
+
+      <div *ngIf="head == 'batch'" class="col-xs-15 col-sm-15 col-md-15 col-lg-15">
+        <br>
+        <button class="button button2" type="button" (click)="selDate()" style="margin-left: 50px;">Select by Date
+          <fa-icon [icon]="['fas', 'calendar-alt']" size="1x" [styles]="{'stroke': 'red', 'color': 'black'}"></fa-icon>
+        </button>
+        &nbsp;
+        <button class="button button3" (click)="selBatch()" type="button">Search by Batch
+          <fa-icon [icon]="['fas', 'search']" size="1x" [styles]="{'stroke': 'red', 'color': 'black'}"></fa-icon>
+        </button>
+        &nbsp;
+        <button class="button button2" (click)="selAll()" type="button">View All
+          <fa-icon [icon]="['fas', 'list']" size="1x" [styles]="{'stroke': 'red', 'color': 'black'}"></fa-icon>
+        </button>
+      </div>
+
+
+      <div *ngIf="head == 'all'" class="col-xs-15 col-sm-15 col-md-15 col-lg-15">
+        <br>
+        <button class="button button2" type="button" (click)="selDate()" style="margin-left: 50px;">Select by Date
+          <fa-icon [icon]="['fas', 'calendar-alt']" size="1x" [styles]="{'stroke': 'red', 'color': 'black'}"></fa-icon>
+        </button>
+        &nbsp;
+        <button class="button button2" (click)="selBatch()" type="button">Search by Batch
+          <fa-icon [icon]="['fas', 'search']" size="1x" [styles]="{'stroke': 'red', 'color': 'black'}"></fa-icon>
+        </button>
+        &nbsp;
+        <button class="button button3" (click)="selAll()" type="button">View All
+          <fa-icon [icon]="['fas', 'list']" size="1x" [styles]="{'stroke': 'red', 'color': 'black'}"></fa-icon>
+        </button>
+      </div>
+
+      <br><br>
+
+
+      <div class="row" *ngIf="byDate" style="margin-left: 40px;">
+
+
+        <form action="" (ngSubmit)="formSubmit()" #form="ngForm" method="POST" role="form" style="width: 250px;">
+
+
+          <div class="form-group" class="button button3">
+            <fa-icon [icon]="['fas', 'calendar-alt']" size="1x" [styles]="{'stroke': 'red', 'color': 'black'}">
+            </fa-icon> <label for="">&nbsp;Select date</label>
+            <br>
+            <input type="date" name="fetchDate" [(ngModel)]="fetchDate" class="buttonDrop button3" id="date"
+              placeholder="Input field">
+          </div>
+
+          <br><br>
+
+          <button type="submit" class="buttonSub button3">Search</button>
+        </form>
+
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      </div>
+
+
+
+      <div class="row" *ngIf="resConNull">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-top: 10%;">
+          <h3 style="color: white; text-align: center; text-decoration: dotted;"><b><i>No Items Found</i></b></h3>
+          <br><br><br><br><br><br><br><br><br><br><br><br>
+        </div>
+      </div>
+
+
+
+      <ng-container *ngIf="resCon">
+
+
+        <ng-container>
+
+          <table class="table table-bordered table-hover" style="margin-left: 10px;">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Date</th>
+                <th>Batch</th>
+                <th>Breakfast</th>
+                <th>Lunch</th>
+                <th>Dinner</th>
+                <th>Fruits & Vegetables</th>
+                <th>Workouts</th>
+                <th>Others</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let m of dlogs.reverse()">
+              <tr>
+                <td>{{m.frm}}</td>
+                <td>{{m.datee}}</td>
+                <td>{{m.batch}}</td>
+                <td>{{m.breakfast}}</td>
+                <td>{{m.lunch}}</td>
+                <td>{{m.dinner}}</td>
+                <td>{{m.fruits}}</td>
+                <td>{{m.workout}}</td>
+                <td>{{m.dlog}}</td>
+              </tr>
+            </tbody>
+          </table>
+          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        </ng-container>
+
+      </ng-container>
+
+      <div class="row" *ngIf="byBatch" style="margin-left: 5%;">
+
+
+        <form action="" (ngSubmit)="batchSubmit()" #form="ngForm" method="POST" role="form" style="width: 190px;">
+
+
+          <div class="form-group" class="button button3">
+            <fa-icon [icon]="['fas', 'list']" size="1x" [styles]="{'stroke': 'red', 'color': 'black'}"></fa-icon> <label
+              for="">&nbsp;Select Batch</label>
+
+            <select name="fetchBatch" class="buttonDrop button3" [(ngModel)]="fetchBatch" id="batch"
+              required="required">
+              <option [ngValue]="undefined" selected disabled>--Select batch--</option>
+              <option [value]=b.batchname *ngFor="let b of batch">{{b.batchname}}</option>
+            </select>
+
+          </div>
+          <br><br>
+
+
+
+
+          <button type="submit" class="buttonSub button2">Search</button>
+        </form>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      </div>
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+  </div>
+
+
+</div>
+
+<app-footer></app-footer>

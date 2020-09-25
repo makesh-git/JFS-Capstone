@@ -1,0 +1,68 @@
+
+<div class="container">
+
+  <div class="row">
+<app-header></app-header>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Batch Name</th>
+      <th>Batch Id</th>
+      <th>Description</th>
+      <th>Started On</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let b of batch">
+    <tr>
+      <td>{{b.batchname}}</td>
+      <td>{{b.batchid}}</td>
+      <td>{{b.batchdesc}}</td>
+      <td>{{b.strtdate}}</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<button type="button" [routerLink]="['/create/batch']" routerLinkActive="router-link-active"  class="myBtnGreen"
+style="text-align: center; margin-left: 40%;">Create New Batch <fa-icon [icon]="['fas', 'plus-circle']"
+  size="1x" [styles]="{'stroke': 'white', 'color': 'white'}"></fa-icon></button>
+<br><br><br>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Batch Name</th>
+        <th>Batch Id</th>
+        <th>Description</th>
+        <th>Started On</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let g of group">
+      <tr>
+        <td>{{g.groupname}}</td>
+        <td>{{g.groupid}}</td>
+        <td>{{g.groupdesc}}</td>
+        <td>{{g.strtdate}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <button type="button" [routerLink]="['/create/group']" routerLinkActive="router-link-active"  class="myBtnGreen"
+  style="text-align: center; margin-left: 40%;">Create New Group <fa-icon [icon]="['fas', 'plus-circle']"
+    size="1x" [styles]="{'stroke': 'white', 'color': 'white'}"></fa-icon></button>
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    </div>
+
+  </div>
+
+</div>
+
+<app-footer></app-footer>

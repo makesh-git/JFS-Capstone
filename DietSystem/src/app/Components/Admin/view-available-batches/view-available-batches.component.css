@@ -1,0 +1,177 @@
+.row{
+  background-color: blanchedalmond;
+  background-image: url('https://images.pexels.com/photos/40751/running-runner-long-distance-fitness-40751.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+	background-size: cover;
+}
+
+th{
+  background-color: rgb(241, 165, 50);
+  text-align: center;
+  font-style: italic;
+}
+
+tbody{
+  text-align: center;
+  background-color: blanchedalmond;
+}
+tbody:hover{
+  font-weight: bolder;
+  color: black;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+tr:hover{
+  font-weight: bolder;
+  color: black;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.button {
+  /* background-color: #4CAF50; Green */
+  background-color: blanchedalmond;
+  border: none;
+  color: black;
+  font-weight: bold;
+  padding: 13px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 2px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+.buttonSub {
+  /* background-color: #4CAF50; Green */
+  background-color:#4CAF50;
+  border: none;
+  color: white;
+  font-weight: bold;
+  padding: 13px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+.buttonDrop {
+  /* background-color: #4CAF50; Green */
+  background-color:whitesmoke;
+  border: none;
+  color: black;
+  font-weight: bold;
+  padding: 13px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.button1 {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.button3 {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.button2:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+select{
+  width: 50%;
+}
+.myBtnBlue{
+  color: white;
+  background-color:#3366cc;
+  padding: 8px 14px;
+  border-top: 0px;
+ border-top-right-radius: 0px;
+ border-bottom: 0px;
+ border-top-left-radius: 0px;
+ border-right: 0px;
+ border-bottom-right-radius: 0px;
+ border-left: 0px;
+ border-bottom-left-radius: 0px;
+
+ border-radius: 0px;
+}
+.myBtnBlue:hover{
+  font-weight: bolder;
+  color: white;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.myBtnGreen{
+  color: white;
+  background-color:#4CAF50;
+  padding: 8px 14px;
+  border-top: 0px;
+ border-top-right-radius: 0px;
+ border-bottom: 0px;
+ border-top-left-radius: 0px;
+ border-right: 0px;
+ border-bottom-right-radius: 0px;
+ border-left: 0px;
+ border-bottom-left-radius: 0px;
+
+ border-radius: 0px;
+}
+.myBtnGreen:hover{
+  font-weight: bolder;
+  color: white;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.myBtnRed{
+  color: white;
+  background-color: red;
+  padding: 8px 14px;
+  border-top: 0px;
+ border-top-right-radius: 0px;
+ border-bottom: 0px;
+ border-top-left-radius: 0px;
+ border-right: 0px;
+ border-bottom-right-radius: 0px;
+ border-left: 0px;
+ border-bottom-left-radius: 0px;
+
+ border-radius: 0px;
+}
+.myBtnRed:hover{
+  color: white;
+  font-weight: bolder;
+
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+
+.myBtnOrange{
+  color: white;
+  background-color:#ff751a;
+  padding: 8px 14px;
+  border-top: 0px;
+ border-top-right-radius: 0px;
+ border-bottom: 0px;
+ border-top-left-radius: 0px;
+ border-right: 0px;
+ border-bottom-right-radius: 0px;
+ border-left: 0px;
+ border-bottom-left-radius: 0px;
+
+ border-radius: 0px;
+}
+.myBtnOrange:hover{
+  color: white;
+  font-weight: bolder;
+
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}

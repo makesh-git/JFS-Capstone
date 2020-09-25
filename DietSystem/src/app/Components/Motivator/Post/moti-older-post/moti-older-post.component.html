@@ -1,0 +1,69 @@
+<div class="container" style="background-color: blanchedalmond;">
+
+  <div class="row">
+    <app-moti-header></app-moti-header>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+      <div class="col-xs-15 col-sm-15 col-md-15 col-lg-15">
+        <br>
+        <button [routerLink]="['/motivator/post/create']" routerLinkActive="router-link-active" type="button"
+          class="button button2" style="margin-left: 50px;">
+
+          Create Post
+          <fa-icon [icon]="['fas', 'pen']" size="1x" [styles]="{'stroke': 'black', 'color': 'black'}"></fa-icon>
+        </button>
+        &nbsp;
+        <button [routerLink]="['/motivator/post/view']" routerLinkActive="router-link-active" type="button"
+          class="button button2">View Post
+
+          <fa-icon [icon]="['fas', 'eye']" size="1x" [styles]="{'stroke': 'black', 'color': 'black'}"></fa-icon>
+        </button>
+        &nbsp;
+        <button [routerLink]="['/motivator/post/older']" routerLinkActive="router-link-active" type="button"
+          class="button button3">Older Post
+          <fa-icon [icon]="['fas', 'folder']" size="1x" [styles]="{'stroke': 'black', 'color': 'black'}"></fa-icon>
+        </button>
+      </div>
+      <br><br>
+      <ng-container *ngIf="con">
+        <ul class="buttonList button3" *ngFor="let m of older.reverse()" style="margin-left: 50px; width: 50%;">
+          <li class="list-group-item">
+            <p class="frm">
+              <fa-icon [icon]="['fas', 'users']" size="1x" [styles]="{'stroke': 'red', 'color': 'red'}"></fa-icon>
+              <span> {{m.to}} </span>
+
+
+            </p>
+            <p class="msg">
+              <fa-icon [icon]="['fas', 'comments']" size="1x" [styles]="{'stroke': 'red', 'color': 'red'}"></fa-icon>
+              <span> {{m.post}}</span>
+            </p>
+            <p class="sent">
+              <fa-icon [icon]="['fas', 'clock']" size="1x" [styles]="{'stroke': 'red', 'color': 'red'}"></fa-icon><span>
+                {{m.dtm}}
+
+                <a (click)="removePost(m)">
+                  <fa-icon [icon]="['fas', 'trash']" size="1x" [styles]="{'stroke': 'red', 'color': 'red'}"></fa-icon>
+                </a>
+
+              </span>
+            </p>
+
+          </li>
+
+        </ul>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+      </ng-container>
+      <div class="row" *ngIf="!con">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-top: 10%;">
+          <h3 style="color: white; text-align: center; text-decoration: dotted;"><b><i>No Items Found</i></b></h3>
+          <br><br><br><br><br><br><br><br><br><br><br><br>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<app-footer></app-footer>

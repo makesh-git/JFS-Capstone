@@ -1,0 +1,130 @@
+<div class="container" style="background-color: blanchedalmond;">
+
+  <div class="row">
+    <app-user-header></app-user-header>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+
+      <ng-container>
+
+        <h4 style="text-align: center;"><b>
+            <fa-icon [icon]="['fas', 'list']" size="1x" [styles]="{'stroke': 'black', 'color': 'black'}"></fa-icon>
+            Batch Details
+          </b></h4>
+        <ng-container *ngFor="let b of batch">
+          <ng-container *ngIf="b.batchname === CURRENR_USER_BATCH">
+            <table class="table table-hover" style="width: 70%; margin-left: 14%;">
+              <tbody class="button button3">
+                <tr>
+                  <td class="h">Batch Name </td>
+                  <td class="b"> {{b.batchname}}</td>
+                </tr>
+                <tr>
+                  <td class="h">Batch Id </td>
+                  <td class="b"> {{b.batchid}}</td>
+                </tr>
+                <tr>
+                  <td class="h">Description </td>
+                  <td class="b"> {{b.batchdesc}}</td>
+                </tr>
+                <tr>
+                  <td class="h">Started On </td>
+                  <td class="b"> {{b.strtdate}}</td>
+                </tr>
+              </tbody>
+            </table>
+
+
+
+          </ng-container>
+
+        </ng-container>
+
+        <h4 style="text-align: center;"><b>
+          <fa-icon [icon]="['fas', 'list']" size="1x" [styles]="{'stroke': 'black', 'color': 'black'}"></fa-icon>
+          Group Details
+        </b></h4>
+        <ng-container *ngFor="let g of group">
+          <ng-container *ngIf="g.groupname === CURRENR_USER_GROUP">
+            <table class="table table-hover" style="width: 70%; margin-left: 14%;">
+              <tbody class="button button3">
+                <tr>
+                  <td class="h">Group Name </td>
+                  <td class="b"> {{g.groupname}}</td>
+                </tr>
+                <tr>
+                  <td class="h">Group Id </td>
+                  <td class="b"> {{g.groupid}}</td>
+                </tr>
+                <tr>
+                  <td class="h">Description </td>
+                  <td class="b"> {{g.groupdesc}}</td>
+                </tr>
+                <tr>
+                  <td class="h">Started On </td>
+                  <td class="b"> {{g.strtdate}}</td>
+                </tr>
+              </tbody>
+            </table>
+
+
+
+          </ng-container>
+
+        </ng-container>
+
+
+        <h4 style="text-align: center;"><b>
+            <fa-icon [icon]="['fas', 'users']" size="1x" [styles]="{'stroke': 'black', 'color': 'black'}"></fa-icon>
+            Batch Motivators
+          </b></h4>
+
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Id</th>
+              <th>Age</th>
+              <th>Gender</th>
+              <th>Email</th>
+              <th>Mobile</th>
+              <th>Motivating Batch</th>
+
+              <th>Country</th>
+              <th>State</th>
+              <th>City</th>
+              <th>Height</th>
+              <th>Weight</th>
+
+            </tr>
+          </thead>
+          <tbody *ngFor="let m of moti">
+            <tr>
+              <td>{{m.name}}</td>
+              <td>{{m.motiid}}</td>
+              <td>{{m.age}}</td>
+              <td>{{m.gender}}</td>
+              <td>{{m.email}}</td>
+              <td>{{m.mobile}}</td>
+              <td>{{m.batches}}</td>
+
+              <td>{{m.country}}</td>
+              <td>{{m.state}}</td>
+              <td>{{m.city}}</td>
+              <td>{{m.height}}</td>
+              <td>{{m.weight}}</td>
+
+            </tr>
+          </tbody>
+        </table>
+
+
+
+        <br><br><br><br><br><br><br><br><br><br><br>
+      </ng-container>
+
+
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

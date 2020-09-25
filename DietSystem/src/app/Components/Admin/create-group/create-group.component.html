@@ -1,0 +1,46 @@
+<div class="container" style="background-color: blanchedalmond;">
+
+  <div class="row">
+    <app-header></app-header>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <h3 style="text-align: center; margin-right: 30px;"><b><i>
+            <fa-icon [icon]="['fas', 'list']" size="1x" [styles]="{'stroke': 'black', 'color': 'black'}"></fa-icon>
+            CREATE GROUP
+          </i></b></h3>
+
+      <form (ngSubmit)="formSubmit()">
+
+
+        <div class="button button3">
+          <label for="">Group Name</label><br>
+          <input type="text" name="groupname" [(ngModel)]="group.groupname" class="buttonDrop button3" id="gname"
+            placeholder="Enter Group Name" required>
+        </div>
+        <div class="button button3">
+          <label for="">Group Id</label><br>
+          <input type="text" name="groupid" [(ngModel)]="group.groupid" class="buttonDrop button3" id="gid"
+            placeholder="Enter Group Id" required>
+        </div>
+        <div class="button button3">
+          <label for="">Group Description</label>
+
+          <br>
+          <textarea name="groupdesc" id="gdesc" [(ngModel)]="group.groupdesc" class="buttonDrop button3" rows="3"
+            required="required"></textarea>
+
+
+        </div>
+
+        <br><br>
+
+        <button type="submit" class="buttonSub button3" style="margin-left: 90px;">Create</button>
+        <br><br><br><br><br><br><br><br><br>
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
+
+<app-footer></app-footer>

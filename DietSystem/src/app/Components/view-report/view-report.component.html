@@ -1,0 +1,185 @@
+<div class="container" style="background-color: blanchedalmond;">
+
+  <div class="row">
+
+    <ng-container *ngIf="userType =='Admin' ">
+      <app-header></app-header>
+    </ng-container>
+
+    <ng-container *ngIf="userType =='Motivator' ">
+      <app-moti-header></app-moti-header>
+    </ng-container>
+
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+
+      <table class="table table-hover" *ngIf="showCon">
+        <thead>
+          <tr style="text-align: center;">
+
+            <th>Month</th>
+            <th>Height(cm)</th>
+            <th>Weight(kg)</th>
+            <th>Chest(cm)</th>
+            <th>Waist(inch)</th>
+            <th>Shoulder(cm)</th>
+            <th>Biceps(inch)</th>
+            <th>Forearm(inch)</th>
+            <th>Legs(inch)</th>
+            <th>Thigh(inch)</th>
+            <th>Hip(inch)</th>
+
+          </tr>
+        </thead>
+        <tbody *ngFor="let r of report.reverse() ">
+          <tr style="text-align: center;">
+
+            <td><b>{{r.month}}</b></td>
+            <td>{{r.height}}</td>
+            <td>{{r.weight}}</td>
+            <td>{{r.chest}}</td>
+            <td>{{r.waist}}</td>
+            <td>{{r.shoulder}}</td>
+            <td>{{r.biceps}}</td>
+            <td>{{r.forearm}}</td>
+            <td>{{r.legs}}</td>
+            <td>{{r.thigh}}</td>
+            <td>{{r.hip}}</td>
+
+
+
+          </tr>
+        </tbody>
+        <tbody>
+          <tr style="text-align: center;">
+            <td><i><b>Click to view in graphical format</b></i></td>
+            <td>
+              <button type="button" (click)="heightGraph()" class="myBtnOrange">Height
+
+                <fa-icon [icon]="['fas', 'chart-line']" size="1x" [styles]="{'stroke': 'white', 'color': 'white'}">
+                </fa-icon>
+              </button>
+            </td>
+            <td>
+              <button type="button" (click)="weightGraph()" class="myBtnOrange">Weight
+
+
+                <fa-icon [icon]="['fas', 'chart-line']" size="1x" [styles]="{'stroke': 'white', 'color': 'white'}">
+                </fa-icon>
+              </button>
+            </td>
+            <td>
+              <button type="button" (click)="chestGraph()" class="myBtnOrange">Chest
+
+                <fa-icon [icon]="['fas', 'chart-line']" size="1x" [styles]="{'stroke': 'white', 'color': 'white'}">
+                </fa-icon>
+              </button>
+            </td>
+            <td>
+              <button type="button" (click)="waistGraph()" class="myBtnOrange">Waist
+
+                <fa-icon [icon]="['fas', 'chart-line']" size="1x" [styles]="{'stroke': 'white', 'color': 'white'}">
+                </fa-icon>
+              </button>
+            </td>
+            <td>
+              <button type="button" (click)="shoulderGraph()" class="myBtnOrange">Shoulder
+
+                <fa-icon [icon]="['fas', 'chart-line']" size="1x" [styles]="{'stroke': 'white', 'color': 'white'}">
+                </fa-icon>
+              </button>
+            </td>
+            <td>
+              <button type="button" (click)="bicepsGraph()" class="myBtnOrange">Biceps
+
+                <fa-icon [icon]="['fas', 'chart-line']" size="1x" [styles]="{'stroke': 'white', 'color': 'white'}">
+                </fa-icon>
+              </button>
+            </td>
+            <td>
+              <button type="button" (click)="forearmGraph()" class="myBtnOrange">Forearm
+
+                <fa-icon [icon]="['fas', 'chart-line']" size="1x" [styles]="{'stroke': 'white', 'color': 'white'}">
+                </fa-icon>
+              </button>
+            </td>
+            <td>
+              <button type="button" (click)="legGraph()" class="myBtnOrange">Legs
+
+                <fa-icon [icon]="['fas', 'chart-line']" size="1x" [styles]="{'stroke': 'white', 'color': 'white'}">
+                </fa-icon>
+              </button>
+            </td>
+            <td>
+              <button type="button" (click)="thighGraph()" class="myBtnOrange">Thigh
+
+                <fa-icon [icon]="['fas', 'chart-line']" size="1x" [styles]="{'stroke': 'white', 'color': 'white'}">
+                </fa-icon>
+              </button>
+            </td>
+            <td>
+              <button type="button" (click)="hipsGraph()" class="myBtnOrange">Hip
+
+                <fa-icon [icon]="['fas', 'chart-line']" size="1x" [styles]="{'stroke': 'white', 'color': 'white'}">
+                </fa-icon>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <ng-container *ngIf="!showCon">
+        <h3 style="text-align: center; color: white; margin-top: 20%;"><b><i>No Data Found</i></b></h3>
+      </ng-container>
+
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+
+
+
+      <div class="modal" id="modal-id" [ngClass]="{'show': mod}">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" (click)="mod = false" class="close" data-dismiss="modal"
+                aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+              <div id="chartContainer" style="width: 80%; margin-left: 175px;"></div>
+              <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            </div>
+            <div class="modal-footer">
+              <button type="button" (click)="mod = false" class="btn btn-default" data-dismiss="modal">Close</button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+
+</div>
+
+<app-footer></app-footer>
+<!-- <div class="container">
+
+  <div class="row">
+
+
+
+    <button type="button" (click)="hei()" class="btn btn-default">Weight</button>
+
+
+       <div  id="chartContainer" style="width: 300px ;height: 200px;"  ></div>
+
+
+       <div  id="WeightChart" style="width: 300px ;height: 200px;"  ></div>
+
+  </div>
+
+</div> -->

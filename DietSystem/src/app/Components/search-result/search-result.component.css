@@ -1,0 +1,49 @@
+
+.container{
+  background-color: blanchedalmond;
+  background-image: url('https://images.pexels.com/photos/40751/running-runner-long-distance-fitness-40751.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+
+th{
+  background-color: rgb(241, 165, 50);
+  font-style: italic;
+  text-align: center;
+}
+.h{
+  font-weight: bold;
+  text-align: center;
+}
+.b{
+  text-align: center;
+}
+
+tr:hover{
+  font-weight: bolder;
+  color: black;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+tbody{
+  background-color: blanchedalmond;
+  text-align: center;
+}
+tbody:hover{
+  font-weight: bolder;
+  color: black;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+ul:hover{
+  font-weight: bolder;
+  color: black;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+li{
+  background-color: blanchedalmond;
+}
+ul{
+  background-color: blanchedalmond;
+}

@@ -1,0 +1,131 @@
+<div class="container" style="background-color: blanchedalmond;">
+
+  <div class="row">
+    <app-header></app-header>
+
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+
+      <h3 style="text-align: center; margin-right: 20px;"><b><i>
+            <fa-icon [icon]="['fas', 'user']" size="1x" [styles]="{'stroke': 'black', 'color': 'black'}"></fa-icon>
+            ADD MOTIVATOR
+          </i></b></h3>
+      <form (ngSubmit)="formSubmit()" #form="ngForm" action="" method="POST" role="form">
+
+        <br>
+        <div class="button button3">
+          <label for="">Name</label>
+          <br>
+          <input type="text" name="name" [(ngModel)]="moti.name" class="buttonDrop button3" id="name"
+            placeholder="Enter Full Name">
+        </div>
+        <br>
+        <div class="button button3">
+          <label for="">Age</label> <br>
+          <input type="number" min="1" name="age" [(ngModel)]="moti.age" class="buttonDrop button3" id="age"
+            placeholder="Enter Age">
+        </div>
+        <br>
+        <div class="button button3">
+          <label for="">Gender</label> <br>
+
+          <select name="gender" [(ngModel)]="moti.gender" id="input" class="buttonDrop button3" required="required">
+            <option [ngValue]="undefined" selected disabled>--Select Gender--&nbsp;</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+
+        </div>
+        <br>
+        <div class="button button3">
+          <label for="">Email</label> <br>
+          <input type="text" name="email" [(ngModel)]="moti.email" class="buttonDrop button3" id="email"
+            placeholder="Enter Email Id">
+        </div>
+        <br>
+        <div class="button button3">
+          <label for="">Mobile</label> <br>
+          <input type="text" maxlength="10" name="mobile" [(ngModel)]="moti.mobile" class="buttonDrop button3" id=""
+            placeholder="Enter Mobile Num">
+        </div>
+        <br>
+        <div class="button button3">
+          <label for="">Batch</label>
+          <br>
+          <select name="batches" [(ngModel)]="moti.batches" id="batch" class="buttonDrop button3" required="required">
+            <option [ngValue]="undefined" selected disabled>--Select Batch--&nbsp;&nbsp;</option>
+            <option [value]="b.batchname" *ngFor="let b of batch">{{b.batchname}}</option>
+          </select>
+
+        </div>
+
+
+
+        <br>
+        <div class="button button3">
+          <label for="">Country</label> <br>
+          <select name="country" [(ngModel)]="moti.country" onclick="ff()" id="countySel" size="1"
+            class="buttonDrop button3" required>
+            <option value="" selected="selected">--Select Country--</option>
+            <option value="India">India</option>
+          </select>
+        </div>
+
+        <br>
+        <div class="button button3">
+          <label for="">State</label> <br>
+          <select name="state" id="stateSel" [(ngModel)]="moti.state" size="1" class="buttonDrop button3" required>
+            <option value="" selected="selected">--Select State--&nbsp;&nbsp;</option>
+          </select>
+        </div>
+
+
+        <br>
+        <div class="button button3">
+
+          <label for="">City</label> <br>
+          <select name="city" [(ngModel)]="moti.city" id="districtSel" size="1" class="buttonDrop button3" required>
+            <option value="" selected="selected">--Select City--&nbsp;&nbsp;&nbsp;</option>
+          </select>
+        </div>
+
+
+
+        <br>
+        <div class="button button3">
+          <label for="">Address</label> <br>
+
+          <textarea name="address" id="address" [(ngModel)]="moti.address" class="buttonDrop button3" rows="3"
+            required="required"></textarea>
+
+        </div>
+
+        <br>
+        <div class="button button3">
+          <label for="">Height</label> <br>
+          <input type="number" min="1" name="height" min="1" [(ngModel)]="moti.height" ng class="buttonDrop button3"
+            id="height" placeholder="Enter Height" required>
+        </div>
+
+        <br>
+        <div class="button button3">
+          <label for="">Weight</label> <br>
+          <input type="number" min="1" name="weight" min="1" [(ngModel)]="moti.weight" class="buttonDrop button3" id="weight"
+            placeholder="Enter Weight" required>
+        </div>
+
+        <br><br>
+        <button type="submit" class="buttonSub button3" style="margin-left: 100px;">Add</button>
+
+        <br><br><br><br><br><br><br><br>
+      </form>
+
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<app-footer></app-footer>

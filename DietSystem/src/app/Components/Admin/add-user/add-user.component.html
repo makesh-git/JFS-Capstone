@@ -1,0 +1,225 @@
+<div class="container" style="background-color: blanchedalmond;">
+
+  <div class="row">
+    <app-header></app-header>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+
+      <h3 style="text-align: center; margin-right: 30px;"><b><i>
+            <fa-icon [icon]="['fas', 'user']" size="1x" [styles]="{'stroke': 'black', 'color': 'black'}"></fa-icon>
+            ADD USER
+          </i></b></h3>
+      <form (ngSubmit)="formSubmit()" #form="ngForm">
+        <br>
+
+        <div class="button button3">
+          <label for="">Full Name</label>
+          <br>
+          <input type="text" name="name" [(ngModel)]="user.name" class="buttonDrop button3" id="name"
+            placeholder="Enter Full Name" required>
+        </div>
+
+        <br>
+        <div class="button button3">
+          <label for="">Age</label>
+          <br>
+          <input type="number" name="age" min="1" [(ngModel)]="user.age" class="buttonDrop button3" id="age"
+            placeholder="Enter Age" required>
+        </div>
+
+
+        <br>
+        <div class="button button3">
+          <label for="">Gender</label>
+          <br>
+          <select name="gender" [(ngModel)]="user.gender" id="gender" class="buttonDrop button3" required="required"
+            required>
+            <option [ngValue]="undefined" selected disabled>--Select Gender--&nbsp;</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+
+
+        <br>
+        <div class="button button3">
+          <label for="">Email</label> <br>
+          <input type="email" name="email" [(ngModel)]="user.email" class="buttonDrop button3" id="email"
+            placeholder="Enter Email Id" required>
+        </div>
+        <br>
+        <div class="button button3">
+          <label for="">Mobile</label> <br>
+          <input type="text" name="mobile" min="1" minlength="3" maxlength="10" [(ngModel)]="user.mobile"
+            class="buttonDrop button3" id="mobile" placeholder="Enter Mobile Num" required>
+        </div>
+
+
+
+
+        <br>
+        <div class="button button3">
+          <label for="">Batch</label> <br>
+
+          <select name="batch" [(ngModel)]="user.batch" id="batch" class="buttonDrop button3" required="required">
+            <option [ngValue]="undefined" selected disabled>--Select Batch--&nbsp;&nbsp;</option>
+            <option [ngValue]=b *ngFor="let b of batch">{{b.batchname}}</option>
+          </select>
+
+        </div>
+
+
+        <br>
+        <div class="button button3">
+          <label for="">Group</label> <br>
+
+          <select name="group" [(ngModel)]="user.group" id="group" class="buttonDrop button3" required="required">
+            <option [ngValue]="undefined" selected disabled>--Select Group--&nbsp;&nbsp;</option>
+            <option [ngValue]=g *ngFor="let g of group">{{g.groupname}}</option>
+          </select>
+
+        </div>
+
+
+
+
+
+
+        <br>
+        <div class="button button3">
+          <label for="">Country</label> <br>
+          <select name="country" [(ngModel)]="user.country" onclick="ff()" id="countySel" size="1"
+            class="buttonDrop button3" required>
+            <option value="" selected="selected">--Select Country--</option>
+            <option value="India">India</option>
+          </select>
+        </div>
+
+        <br>
+        <div class="button button3">
+          <label for="">State</label> <br>
+          <select name="state" id="stateSel" [(ngModel)]="user.state" size="1" class="buttonDrop button3" required>
+            <option value="" selected="selected">--Select State--&nbsp;&nbsp;</option>
+          </select>
+        </div>
+
+
+        <br>
+        <div class="button button3">
+
+          <label for="">City</label> <br>
+          <select name="city" [(ngModel)]="user.city" id="districtSel" size="1" class="buttonDrop button3" required>
+            <option value="" selected="selected">--Select City--&nbsp;&nbsp;&nbsp;</option>
+          </select>
+        </div>
+
+        <br>
+        <div class="button button3">
+          <label for="">Address</label> <br>
+
+          <textarea name="address" [(ngModel)]="user.address" id="address" class="buttonDrop button3" rows="3"
+            required="required"></textarea>
+
+        </div>
+
+
+        <br>
+        <div class="button button3">
+          <label for="">Pincode</label> <br>
+          <input type="text" name="pincode" [(ngModel)]="user.pincode" class="buttonDrop button3" id="pincode"
+            placeholder="Enter Pincode" required>
+        </div>
+
+        <br>
+        <div class="button button3">
+          <label for="">Height</label> <br>
+          <input type="number" name="height" min="1" [(ngModel)]="user.height" ng class="buttonDrop button3" id="height"
+            placeholder="Enter Height" required>
+        </div>
+
+        <br>
+        <div class="button button3">
+          <label for="">Weight</label> <br>
+          <input type="number" name="weight" min="1" [(ngModel)]="user.weight" class="buttonDrop button3" id="weight"
+            placeholder="Enter Weight" required>
+        </div>
+
+        <br>
+        <div class="button button3">
+          <label for="">BMI</label> <br>
+          <input type="text" name="bmi" [value]="cll()" class="buttonDrop button3" readonly id="bmi"
+            placeholder="BMI(Auto Calculated)" required>
+        </div>
+
+
+        <br>
+        <div class="button button3"> <br>
+          <label for="">Reason for joining</label> <br>
+
+          <textarea name="reason" [(ngModel)]="user.reason" id="reason" class="buttonDrop button3" rows="3"
+            required="required"></textarea>
+
+        </div>
+        <br>
+        <div class="button button3">
+          <label for="">Medical Restrictions</label> <br>
+          <textarea name="medRes" [(ngModel)]="user.medRes" id="med" class="buttonDrop button3" rows="3"
+            required="required"></textarea>
+        </div>
+
+        <br>
+        <div class="button button3">
+          <label for="">Dietry Restriction</label> <br>
+          <textarea name="dietRes" [(ngModel)]="user.dietRes" id="diet" class="buttonDrop button3" rows="3"
+            required="required"></textarea>
+        </div>
+
+        <br>
+        <div class="button button3">
+          <label for="">Dietrey Type</label>
+          <br>
+          <select name="food" [(ngModel)]="user.food" id="food" class="buttonDrop button3" required="required">
+            <option [ngValue]="undefined" selected disabled>Select Dietery Type</option>
+            <option value="Vegetarian">Vegetarian</option>
+            <option value="Non-Vegetarian">Non-Vegetarian</option>
+            <option value="Vegan">Vegan</option>
+          </select>
+
+        </div>
+        <br>
+        <ng-container *ngIf="user.gender == 'Female'">
+          <div class="button button3">
+            <label for="">Preganancy Status</label> <br>
+            <select name="preg" [(ngModel)]="user.preg" id="preg" class="buttonDrop button3" required="required">
+              <option [ngValue]="undefined" selected disabled>-Preganancy Status-</option>
+              <option value="Preganant">Preganant</option>
+              <option value="Not-Preganant">Not-Preganant</option>
+            </select>
+          </div>
+        </ng-container>
+
+
+
+
+
+
+
+        <br><br>
+        <button type="submit" class="buttonSub button3" style="margin-left: 100px;">Add</button>
+
+        <br><br><br><br><br><br><br><br>
+
+
+
+
+
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
+
+<app-footer></app-footer>

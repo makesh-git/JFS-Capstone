@@ -1,0 +1,137 @@
+<div class="container" style="background-color: blanchedalmond;">
+
+  <div class="row">
+    <app-moti-header></app-moti-header>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+
+
+      <div class="row" style="margin-left: 15%;">
+        <br>
+
+        <br>
+
+
+
+
+
+        <table class="table table-bordered table-hover" style="width:50%;">
+
+
+          <tbody class="button button3">
+            <h3 style=" text-align: center; "><b><i>
+                  <fa-icon [icon]="['fas', 'user']" size="1x" [styles]="{'stroke': 'black', 'color': 'black'}">
+                  </fa-icon>
+                  MOTIVATOR PROFILE
+                </i></b></h3>
+            <tr>
+              <td class="h">Name </td>
+              <td class="b"> {{moti.name}}</td>
+            </tr>
+
+            <tr>
+              <td class="h">Age </td>
+              <td class="b"> {{moti.age}}</td>
+            </tr>
+            <tr>
+              <td class="h">Gender </td>
+              <td class="b"> {{moti.gender}}</td>
+            </tr>
+            <!-- <tr>
+                    <td class = "h">BMI </td>
+                    <td  class = "b" > {{moti.bmi}}</td>
+                  </tr> -->
+            <tr>
+              <td class="h">Email </td>
+              <td class="b"> {{moti.email}}</td>
+            </tr>
+            <tr>
+              <td class="h">Motivating Batch </td>
+              <td class="b"> {{moti.batches}}</td>
+            </tr>
+            <tr>
+              <td class="h">Mobile </td>
+              <td class="b"> {{moti.mobile}}</td>
+            </tr>
+            <tr>
+              <td class="h">Country </td>
+              <td class="b"> {{moti.country}}</td>
+            </tr>
+
+            <tr>
+              <td class="h"> State</td>
+              <td class="b"> {{moti.state}}</td>
+            </tr>
+
+            <tr>
+              <td class="h">City </td>
+              <td class="b"> {{moti.city}}</td>
+            </tr>
+
+            <tr>
+              <td class="h">Address </td>
+              <td class="b"> {{moti.address}}</td>
+            </tr>
+
+            <tr>
+              <td class="h"> Height(cm)</td>
+              <td class="b"> {{moti.height}}</td>
+            </tr>
+
+            <tr>
+              <td class="h"> Weight(kg)</td>
+              <td class="b"> {{moti.weight}}</td>
+            </tr>
+
+
+
+
+
+
+            <tr>
+              <td class="h">Date Joined </td>
+              <td class="b"> {{moti.regDate}}</td>
+            </tr>
+            <tr>
+              <td class="h">Referel Id </td>
+              <td class="b"> {{moti.refId}}</td>
+            </tr>
+            <br>
+            <button type="button" [routerLink]="['/motivator/profile/edit']" routerLinkActive="router-link-active"
+              class="buttonSub button3" style="margin-left: -3%;">
+              <fa-icon [icon]="['fas', 'pen']" size="1x" [styles]="{'stroke': 'white', 'color': 'white'}"></fa-icon>
+              Edit Profile
+            </button>
+
+          </tbody>
+
+
+
+        </table>
+
+
+        <br><br><br><br>
+
+
+
+
+
+        <br><br>
+
+      </div>
+
+
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+
+    </div>
+
+  </div>
+
+</div>
+<app-footer></app-footer>

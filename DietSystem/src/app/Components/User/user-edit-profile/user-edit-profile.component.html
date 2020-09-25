@@ -1,0 +1,182 @@
+<div class="container" style="background-color: blanchedalmond;">
+
+  <div class="row">
+
+    <app-user-header></app-user-header>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+      <br>
+      <h3 style="text-align: center;"><b><i>
+            <fa-icon [icon]="['fas', 'pen']" size="1x" [styles]="{'stroke': 'black', 'color': 'black'}"></fa-icon>
+            EDIT PROFILE
+          </i></b></h3>
+      <!-- <h3 style="width: 30%;  margin-left: 35%; text-align: center; background-color: rgb(241, 165, 50);"><b><i>Modify Details</i></b></h3> -->
+      <form (ngSubmit)="formSubmit()" style="width: 200px;margin-left: 38%;">
+
+        <br>
+        <div class="button button3">
+          <label>Full Name</label>
+          <input type="text" name="name" [(ngModel)]="user.name" class="buttonDrop button3" id="name"
+            placeholder="Enter Full Name">
+        </div>
+
+        <br>
+        <div class="button button3">
+          <label>Age</label>
+          <input type="number" name="age" min="1" [(ngModel)]="user.age" class="buttonDrop button3" id="age"
+            placeholder="Enter Age">
+        </div>
+
+
+        <br>
+        <div class="button button3">
+          <label>Gender</label>
+          <select name="gender" [(ngModel)]="user.gender" id="gen" class="buttonDrop button3" required="required"
+            required>
+            <option [ngValue]="undefined" selected disabled>--Select Gender --</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+
+        <br>
+        <div class="button button3">
+          <label>Email</label>
+          <input type="text" name="email" [(ngModel)]="user.email" class="buttonDrop button3" id="email"
+            placeholder="Enter Email Id">
+        </div>
+
+        <br>
+        <div class="button button3">
+          <label>Mobile</label>
+          <input type="text" name="mobile" [(ngModel)]="user.mobile" class="buttonDrop button3" id="mob"
+            placeholder="Enter Mobile Num">
+        </div>
+
+
+
+
+
+        <br>
+        <div class="button button3">
+          <label>Country</label>
+          <input type="text" name="country" [(ngModel)]="user.country" class="buttonDrop button3" id="coun"
+            placeholder="Enter Country Name">
+        </div>
+
+        <!-- <div class="form-group">
+              <label for="">Country</label> <br>
+              <select  name="country" [(ngModel)]="user.country"  onclick="ff()"  id="countySel" size="1" class="form-control" required>
+                <option value="" selected="selected" >  Select Country</option>
+                <option value="India"  >  India</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="">State</label>
+              <select name="state" id="stateSel"  [(ngModel)]="user.state" size="1" class="form-control" required>
+                <option value=""  selected="selected">Select State</option>
+              </select>
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="">District</label>
+              <select		name="city" [(ngModel)]="user.city" id="districtSel" size="1" class="form-control"	required>
+                <option value=""  selected="selected">Select State	</option>
+              </select>
+            </div> -->
+
+        <br>
+        <div class="button button3">
+          <label>State</label>
+          <input type="text" name="state" [(ngModel)]="user.state" class="buttonDrop button3" id="state"
+            placeholder="Enter State Name">
+        </div>
+
+
+        <br>
+        <div class="button button3">
+          <label>City</label>
+          <input type="text" name="city" [(ngModel)]="user.city" class="buttonDrop button3" id="city"
+            placeholder="Enter City Name">
+        </div>
+
+        <br>
+        <div class="button button3">
+          <label>pincode</label>
+          <input type="text" name="pincode" [(ngModel)]="user.pincode" class="buttonDrop button3" id="pincode"
+            placeholder="Enter Pincode">
+        </div>
+
+        <br>
+        <div class="button button3">
+          <label>Address</label>
+          <!-- <input type="text" name = "address" [(ngModel)]="user.address" class="form-control" id="" placeholder="Input field"> -->
+
+          <textarea name="address" id="address" [(ngModel)]="user.address" class="buttonDrop button3" rows="3"
+            required="required"></textarea>
+
+        </div>
+
+
+        <br>
+        <div class="button button3">
+          <label>Height(in cm)</label>
+          <input type="number" name="height" [(ngModel)]="user.height" ng class="buttonDrop button3" id="height"
+            placeholder="Enter Height" required>
+        </div>
+
+        <br>
+        <div class="button button3">
+          <label>Weight(in kg(</label>
+          <input type="number" name="weight" [(ngModel)]="user.weight" class="buttonDrop button3" id="weight"
+            placeholder="Enter Weight" required>
+        </div>
+
+        <br>
+        <div class="button button3">
+          <label>BMI</label>
+          <input type="text" name="bmi" [value]="cll()" class="buttonDrop button3" readonly id="bmi"
+            placeholder="BMI(Auto calculated)" required>
+        </div>
+
+
+        <br>
+        <div class="button button3">
+          <label>Dietrey Type</label>
+
+          <select name="food" [(ngModel)]="user.food" id="food" class="buttonDrop button3" required="required">
+            <option [ngValue]="undefined" selected disabled>-- Dietery Type --</option>
+            <option value="Vegetarian">Vegetarian</option>
+            <option value="Non-Vegetarian">Non-Vegetarian</option>
+            <option value="Vegan">Vegan</option>
+          </select>
+
+        </div>
+
+        <ng-container *ngIf="user.gender == 'Female'">
+          <br>
+          <div class="button button3">
+            <label>Preganancy Status</label>
+            <select name="preg" [(ngModel)]="user.preg" id="preg" class="buttonDrop button3" required="required">
+              <option [ngValue]="undefined" selected disabled>-Preganant Status-</option>
+
+              <option value="Preganant">Preganant</option>
+              <option value="Not-Preganant">Not-Preganant</option>
+            </select>
+          </div>
+        </ng-container>
+        <br><br>
+        <button type="submit" class="buttonSub button2" style="margin-left: 84px;">Update</button>
+        <br><br><br><br><br>
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
+
+<app-footer></app-footer>

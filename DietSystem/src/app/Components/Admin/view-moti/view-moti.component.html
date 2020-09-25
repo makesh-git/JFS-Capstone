@@ -1,0 +1,57 @@
+<div class="container" style="background-color: blanchedalmond;">
+
+  <div class="row">
+    <app-header></app-header>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+
+
+      <table class="table table-hover">
+        <thead style="font-style: italic;">
+          <tr>
+            <th style=" text-align: center;">Motivator ID</th>
+            <th style=" text-align: center;">Name</th>
+            <th style=" text-align: center;">Age</th>
+            <th style=" text-align: center;">Gender</th>
+            <th style=" text-align: center;">Email</th>
+            <th style=" text-align: center;">Motivating Batch</th>
+            <th style=" text-align: center;">Profile</th>
+            <th style=" text-align: center;">Modify</th>
+            <th style=" text-align: center;">Remove</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let m of moti.reverse()">
+          <tr style=" text-align: center;">
+            <td>{{m.motiid}}</td>
+            <td>{{m.name}}</td>
+            <td>{{m.age}}</td>
+            <td>{{m.gender}}</td>
+            <td>{{m.email}}</td>
+            <td>{{m.batches}}</td>
+            <td>
+              <button [routerLink]="['/profile/motivator',m.motiid]" routerLinkActive="router-link-active" type="button"
+                class="myBtnGreen">Profile
+                <fa-icon [icon]="['fas', 'user']" size="1x" [styles]="{'stroke': 'white', 'color': 'white'}"></fa-icon>
+                </button>
+            </td>
+            <td>
+              <button [routerLink]="['/modify/motivator',m.motiid]" routerLinkActive="router-link-active" type="button"
+                class="myBtnBlue">Modify
+                <fa-icon [icon]="['fas', 'pen']" size="1x" [styles]="{'stroke': 'white', 'color': 'white'}"></fa-icon>
+                </button>
+            </td>
+            <td>
+              <button (click)="del(m.motiid)" type="button" class="myBtnRed">Remove <fa-icon [icon]="['fas', 'trash']"
+                  size="1x" [styles]="{'stroke': 'white', 'color': 'white'}"></fa-icon></button>
+            </td>
+
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  </div>
+
+</div>
+<app-footer></app-footer>

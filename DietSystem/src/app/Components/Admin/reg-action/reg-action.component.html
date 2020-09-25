@@ -1,0 +1,262 @@
+<div class="container" style="background-color: blanchedalmond;">
+
+  <div class="row">
+    <app-header></app-header>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+
+
+
+      <div class="row" style="margin-left: 15%;">
+        <br>
+
+        <br>
+
+
+
+
+
+        <table class="table table-bordered table-hover" style="width:50%;">
+
+
+          <tbody class="button button3">
+            <h3 style=" text-align: center; "><b><i>
+                  <fa-icon [icon]="['fas', 'user']" size="1x" [styles]="{'stroke': 'black', 'color': 'black'}">
+                  </fa-icon>&nbsp;REGISTERED DETAILS
+                </i></b></h3>
+            <tr>
+              <td class="h">Name </td>
+              <td class="b"> {{regUser.name}}</td>
+            </tr>
+
+            <tr>
+              <td class="h">Age </td>
+              <td class="b"> {{regUser.age}}</td>
+            </tr>
+            <tr>
+              <td class="h">Gender </td>
+              <td class="b"> {{regUser.gender}}</td>
+            </tr>
+            <tr>
+              <td class="h">BMI </td>
+              <td class="b"> {{regUser.bmi}}</td>
+            </tr>
+            <tr>
+              <td class="h">Email </td>
+              <td class="b"> {{regUser.email}}</td>
+            </tr>
+            <tr>
+              <td class="h">Country </td>
+              <td class="b"> {{regUser.country}}</td>
+            </tr>
+
+            <tr>
+              <td class="h"> State</td>
+              <td class="b"> {{regUser.state}}</td>
+            </tr>
+
+            <tr>
+              <td class="h">City </td>
+              <td class="b"> {{regUser.city}}</td>
+            </tr>
+
+            <tr>
+              <td class="h">Address </td>
+              <td class="b"> {{regUser.address}}</td>
+            </tr>
+
+            <tr>
+              <td class="h"> Height</td>
+              <td class="b"> {{regUser.height}}</td>
+            </tr>
+
+            <tr>
+              <td class="h"> Weight</td>
+              <td class="b"> {{regUser.weight}}</td>
+            </tr>
+
+            <tr>
+              <td class="h">Medical Restrictions </td>
+              <td class="b"> {{regUser.medRes}}</td>
+            </tr>
+
+            <tr>
+              <td class="h">Dietery Restrictions </td>
+              <td class="b"> {{regUser.dietRes}}</td>
+            </tr>
+
+            <tr>
+              <td class="h"> Reason for Joining</td>
+              <td class="b"> {{regUser.reason}}</td>
+            </tr>
+
+            <tr>
+              <td class="h">Dietery Type </td>
+              <td class="b"> {{regUser.food}}</td>
+            </tr>
+
+            <tr>
+              <td class="h">Refered By</td>
+              <td class="b"> {{regUser.ref}}</td>
+            </tr>
+
+            <tr>
+              <td class="h">Preganancy Status </td>
+              <td class="b"> {{regUser.preg}}</td>
+            </tr>
+
+            <tr>
+              <td class="h">Date Registered </td>
+              <td class="b"> {{regUser.regDate}}</td>
+            </tr>
+
+
+            <br>
+            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1" style="margin-left: 24%;">
+
+              <button type="button" class="myBtnGreen" (click)="appModal= true" style="margin-left: 20%;"> Approve
+                <fa-icon [icon]="['fas', 'check']" size="1x" [styles]="{'stroke': 'white', 'color': 'white'}"></fa-icon>
+                </button>
+
+            </div>
+
+            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1" style="margin-left: 80px;">
+              <button type="button" class="myBtnRed" (click)="rejModal = true">Reject
+                <fa-icon [icon]="['fas', 'times']" size="1x" [styles]="{'stroke': 'white', 'color': 'white'}"></fa-icon>
+              </button>
+            </div>
+            <br> <br>
+
+          </tbody>
+
+
+
+        </table>
+
+
+
+        <br><br><br><br>
+
+
+      </div>
+
+
+
+
+
+
+
+
+
+
+      <!-- Modal for approval -->
+      <div class="modal" id="modal-id" [ngClass]="{'show': appModal}">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" (click)="appModal= false" data-dismiss="modal"
+                aria-hidden="true">&times;</button>
+              <h4 class="modal-title" style="text-align: center;"><b>Choose Batch And Group</b></h4>
+            </div>
+            <div class="modal-body" style="margin-left: 30%;">
+              <form action="" method="POST" role="form" (ngSubmit)="appSubmit()" #form="ngForm">
+
+                <div>
+                  <label for="" style="text-align: center;"> Select Batch</label>
+                  <br>
+                  <select name="selBatch" [(ngModel)]="selBatch" id="batch" class="buttonDrop button3"
+                    required="required" style="width: 200px;">
+                    <option [ngValue]="undefined" selected disabled>--Select Batch--</option>
+                    <option *ngFor="let b of batch" [value]="b.batchname">{{b.batchname}}</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="" style="text-align: center;">Select Group</label>
+                  <br>
+                  <select name="selGroup" [(ngModel)]="selGroup" id="group" class="buttonDrop button3"
+                    required="required" style="width: 200px;">
+                    <option [ngValue]="undefined" selected disabled>--Select Group--</option>
+                    <option *ngFor="let g of group" [value]="g.groupname">{{g.groupname}}</option>
+                  </select>
+                </div>
+                <button type="submit" class="myBtnGreenZ">Approve
+                  <fa-icon [icon]="['fas', 'check']" size="1x" [styles]="{'stroke': 'white', 'color': 'white'}">
+                  </fa-icon>
+                </button>
+                <h5><i>On approval,user will receive a mail with login Credentials</i></h5>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" (click)="appModal= false"
+                data-dismiss="modal">Close</button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Modal for Reject -->
+
+
+
+      <div class="modal" id="modal-id" [ngClass]="{'show': rejModal}">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" (click)="rejModal = false"
+                aria-hidden="true">&times;</button>
+              <h4 class="modal-title" style="text-align: center;"><b>Reason for Rejection</b></h4>
+            </div>
+            <div class="modal-body">
+
+
+
+
+              <form action="" (ngSubmit)="rejSubmit()" #form="ngForm" method="POST" role="form">
+
+
+                <div class="form-group">
+                  <label for="">Mention the Reason</label>
+                  <br>
+                  <textarea name="reason" [(ngModel)]="reason" id="reason" class="buutonDrop button3" rows="6"
+                    style="width: 500px;" required="required"></textarea>
+
+                </div>
+
+
+
+                <button type="submit" class="myBtnRedZ">Reject
+                  <fa-icon [icon]="['fas', 'times']" size="1x" [styles]="{'stroke': 'white', 'color': 'white'}">
+                  </fa-icon>
+                </button>
+                <h5><i>On Rejection,User will receive a mail along with reason</i></h5>
+              </form>
+
+
+
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal"
+                (click)="rejModal = false">Close</button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<app-footer></app-footer>
+
+

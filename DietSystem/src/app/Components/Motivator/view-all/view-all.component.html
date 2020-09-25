@@ -1,0 +1,54 @@
+<div class="container" style="background-color: blanchedalmond;">
+
+  <div class="row">
+
+    <app-moti-header></app-moti-header>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+
+
+      <table class="table table-hover" style="text-align: center;">
+        <thead style="font-style: italic;">
+          <tr style="text-align: center;">
+            <th style="text-align: center;">User Id</th>
+            <th style="text-align: center;">Name</th>
+            <th style="text-align: center;">Age</th>
+            <th style="text-align: center;">Email</th>
+            <th style="text-align: center;">Batch</th>
+            <th style="text-align: center;">Group</th>
+            <th style="text-align: center;">Monthly Report</th>
+            <th style="text-align: center;">Profile</th>
+
+          </tr>
+        </thead>
+        <tbody *ngFor="let u of user.reverse()" style="text-align: center;">
+          <tr>
+            <td>{{u.userid}}</td>
+            <td>{{u.name}}</td>
+            <td>{{u.age}}</td>
+            <td>{{u.email}}</td>
+            <td>{{u.batch.batchname}}</td>
+            <td>{{u.group.groupname}}</td>
+            <td>
+              <button [routerLink]="['/view/report',u.userid]" routerLinkActive="router-link-active" type="button"
+                class="myBtnOrange">Report
+                <fa-icon [icon]="['fas', 'list']" size="1x" [styles]="{'stroke': 'white', 'color': 'white'}"></fa-icon>
+              </button>
+            </td>
+            <td>
+              <button [routerLink]="['/profile/user',u.userid]" routerLinkActive="router-link-active" type="button"
+                class="myBtnGreen">Profile
+                <fa-icon [icon]="['fas', 'user']" size="1x" [styles]="{'stroke': 'white', 'color': 'white'}"></fa-icon>
+              </button>
+            </td>
+
+          </tr>
+        </tbody>
+      </table>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </div>
+
+  </div>
+
+</div>
+<app-footer></app-footer>

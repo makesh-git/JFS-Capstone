@@ -1,0 +1,129 @@
+.container{
+  background-color: blanchedalmond;
+  background-image: url('https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500');
+  background-repeat: no-repeat;
+
+	background-size: cover;
+}
+.button {
+  /* background-color: #4CAF50; Green */
+  background-color: blanchedalmond;
+  border: none;
+  color: black;
+  font-weight: bold;
+  padding: 1px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+.buttonSub {
+  /* background-color: #4CAF50; Green */
+  margin-left: 70px;
+  background-color:#4CAF50;
+  border: none;
+  color: white;
+  font-weight: bold;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+.buttonBlue {
+  /* background-color: #4CAF50; Green */
+  margin-left: 70px;
+  background-color:#3366cc;
+  border: none;
+  color: white;
+  font-weight: bold;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+.buttonDrop {
+  /* background-color: #4CAF50; Green */
+  background-color:whitesmoke;
+  border: none;
+  color: black;
+  font-weight: bold;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.button1 {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.button3 {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.button2:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+form{
+  width: 400px;
+  margin-left: 420px;
+  margin-top: 30px;
+}
+.myBtnBlue{
+  color: white;
+  background-color:#3366cc;
+  padding: 8px 14px;
+  border-top: 0px;
+ border-top-right-radius: 0px;
+ border-bottom: 0px;
+ border-top-left-radius: 0px;
+ border-right: 0px;
+ border-bottom-right-radius: 0px;
+ border-left: 0px;
+ border-bottom-left-radius: 0px;
+
+ border-radius: 0px;
+}
+.myBtnBlue:hover{
+  font-weight: bolder;
+  color: white;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.myBtnGreen{
+  color: white;
+  background-color:#4CAF50;
+  padding: 8px 14px;
+  border-top: 0px;
+ border-top-right-radius: 0px;
+ border-bottom: 0px;
+ border-top-left-radius: 0px;
+ border-right: 0px;
+ border-bottom-right-radius: 0px;
+ border-left: 0px;
+ border-bottom-left-radius: 0px;
+
+ border-radius: 0px;
+}
+.myBtnGreen:hover{
+  font-weight: bolder;
+  color: white;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
